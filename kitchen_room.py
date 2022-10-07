@@ -1,6 +1,10 @@
 class KitchenRoom():
 
-    def scene1():
+    def start_kitchen():
+        print("You enter a dimly lit hallway just outside of your kitchen.")
+        print("")
+
+    def pick_ignore():
         import time
         print("""
             You enter the kitchen. Your eyes focus on the current time on the stove. 
@@ -11,22 +15,21 @@ class KitchenRoom():
             Type your choice: Pick Up, or Ignore.
              
             """)
-
+        here_before = False
         c1 = input(">> ")
         time.sleep(2)
         ans = 'incorrect'
-        while(ans=='incorrect'):
-            if(c1.lower()=="pick up"):
+        while here_before == False:
+            if(c1()=="pick up"):
                 print("\nYou walk over to the kitchen table and pick up your phone.")
-                ans = 'correct'
-                time.sleep(1)
-                scene1_A()
-            elif(c1.lower()=="ignore"):
+                pickup()
+            elif(c1()=="ignore"):
                 print("You understand that the day is already well under way. Might as well try to enjoy it.")
+                ignore()
             else:
                 print("ENTER A VALID CHOICE! Pick up or ignore?")
                 c1 = input(">> ")
-    def scene1_A():
+    def pickup():
         import time
         print("""
                 Your notice your phone has no new notifications. Not even an email. Peculiar...""")
