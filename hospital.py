@@ -44,10 +44,12 @@ class HospitalRoom():
         elif choice_main == 'right':
             print(
                 'The window to the right looks like it could tell you more about where you are.')
+            self.right_room_view()
             time.sleep(3)
             self.right_room_view()
         else:
-            print('That command did nothing, try entering left/center/right to progress.')
+            print(
+                'That command did nothing, enter a valid command to progress.')
 
     def right_room_view(self):
         print('Entering the right side of the room you notice the window is not the only thing on the right side of the room,')
@@ -70,7 +72,7 @@ class HospitalRoom():
         elif choice_window == 'bathroom':
             self.bathroom()
         else:
-            print('That command did nothing, try entering left/center/right to progress.')
+            print('That command did nothing, enter a valid command to progress.')
 
     def left_room_view(self):
         print('You approach the storage unit and realize it seems to be made up of sections including cabinets and file storage.')
@@ -82,7 +84,7 @@ class HospitalRoom():
         elif choice_left == 'files':
             self.files()
         else:
-            print('That command did nothing, try entering left/center/right to progress.')
+            print('That command did nothing, enter a valid command to progress.')
 
     def cabinets(self):
         print('You begin opening the cabinets and searchong for anything that might be useful.')
@@ -98,7 +100,7 @@ class HospitalRoom():
         elif choice_cabinet == 'back':
             self.main_room_view()
         else:
-            print('That command did nothing, try entering left/center/right to progress.')
+            print('That command did nothing, enter a valid command to progress.')
 
     def files(self):
         print('You move on to investigate the filing cabinet next to you. The drawers are full of files and papers,')
@@ -115,6 +117,8 @@ class HospitalRoom():
             self.cabinets()
         elif choice_files == 'back':
             self.main_room_view()
+        else:
+            print('That command did nothing, enter a valid command to progress.')
 
     def center_room_view(self):
         print('Standing in the center of the room, you observe your options.')
@@ -132,7 +136,7 @@ class HospitalRoom():
         elif choice_center == 'bathroom':
             self.bathroom()
         else:
-            print('That command did nothing, try entering left/center/right to progress.')
+            print('That command did nothing, enter a valid command to progress.')
 
     def bed(self):
         print('You move closer to the bed and from this distance you are sure there is someone or something under the sheets.')
@@ -159,7 +163,11 @@ class HospitalRoom():
                 self.center_room_view()
             else:
                 print(
-                    'That command did nothing, try entering left/center/right to progress.')
+                    'That command did nothing, enter a valid command to progress.')
+        elif choice_bed == 'back':
+            self.center_room_view()
+        else:
+            print('That command did nothing, enter a valid command to progress.')
 
     def screens(self):
         print('You turn toward the screens used to monitor vitals and status.')
@@ -173,7 +181,7 @@ class HospitalRoom():
         if choice_screens == 'back':
             self.center_room_view()
         else:
-            print('That command did nothing, try entering left/center/right to progress.')
+            print('That command did nothing, enter a valid command to progress.')
 
     def bathroom(self):
         print('As you enter the bathroom and evaluate your surroundings you notice you are a few steps out of view of the mirror,')
@@ -187,7 +195,7 @@ class HospitalRoom():
         elif choice_bathroom == 'trash':
             self.trash()
         else:
-            print('That command did nothing, try entering left/center/right to progress.')
+            print('That command did nothing, enter a valid command to progress.')
 
     def mirror(self):
         print('For some reason you feel a strong urge to fully enter the room and turn to look in the mirror.')
@@ -205,7 +213,7 @@ class HospitalRoom():
         elif choice_mirror == 'back':
             self.main_room_view()
         else:
-            print('That command did nothing, try entering left/center/right to progress.')
+            print('That command did nothing, enter a valid command to progress.')
 
     def trash(self):
         print('You approach the trash and inspect what seems to be a file similar to those in the storage unit that has been thrown away.')
@@ -232,11 +240,11 @@ class HospitalRoom():
                 self.main_room_view()
             else:
                 print(
-                    'That command did nothing, try entering left/center/right to progress.')
+                    'That command did nothing, enter a valid command to progress.')
         elif choice_trash == 'no':
             self.main_room_view()
         else:
-            print('That command did nothing, try entering left/center/right to progress.')
+            print('That command did nothing, enter a valid command to progress.')
 
     def exit_room(self):
         print('You bend down to pick up the key, as your fingers touch the key a bright light envelops your vision,')
@@ -247,22 +255,25 @@ class HospitalRoom():
 
 # hospital_key = False
 
-# hospital_room = HospitalRoom()
+hospital_room = HospitalRoom()
 
 
-# def play_hospital_room():
-#     hospital_room.room_start()
-#     hospital_room.main_room_view()
+def play_hospital_room():
+    hospital_room.room_start()
+    hospital_room.main_room_view()
+
+
+play_hospital_room()
 #     player.add_key()
 #     print(player.key_fragments)
 
-    # if hospital_key == False:
-    #     hospital_room.room_start()
-    #     hospital_room.main_room_view()
-    #     hospital_key = True
-    #     print(hospital_key)
-    #     player.add_key()
-    #     print(player.key_fragments)
-    # elif hospital_key == True:
-    #     print('This room seems to be locked now, try another room.')
-    #     return
+# if hospital_key == False:
+#     hospital_room.room_start()
+#     hospital_room.main_room_view()
+#     hospital_key = True
+#     print(hospital_key)
+#     player.add_key()
+#     print(player.key_fragments)
+# elif hospital_key == True:
+#     print('This room seems to be locked now, try another room.')
+#     return
