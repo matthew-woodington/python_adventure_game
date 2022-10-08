@@ -1,16 +1,5 @@
-
+from main import player
 import time
-
-
-class Player():
-    def __init__(self):
-        self.key_fragments = 0
-
-    def add_key(self):
-        self.key_fragments += 1
-
-
-player = Player()
 
 
 class HospitalRoom():
@@ -60,6 +49,7 @@ class HospitalRoom():
             print(
                 'The window to the right looks like it could tell you more about where you are.')
             time.sleep(3)
+            self.right_room_view()
         else:
             print('That command did nothing, try entering left/center/right to progress.')
 
@@ -259,23 +249,25 @@ class HospitalRoom():
         return
 
 
-hospital_key = False
+# hospital_key = False
 
 
 def play_hospital_room():
     hospital_room = HospitalRoom()
-    print(hospital_key)
-
-    if hospital_key == False:
-        hospital_room.room_start()
-        hospital_room.main_room_view()
-        hospital_key = True
-        print(hospital_key)
-        player.add_key()
-        print(player.key_fragments)
-    elif hospital_key == True:
-        print('This room seems to be locked now, try another room.')
-        return
+    hospital_room.room_start()
+    hospital_room.main_room_view()
+    player.add_key()
+    print(player.key_fragments)
+    # if hospital_key == False:
+    #     hospital_room.room_start()
+    #     hospital_room.main_room_view()
+    #     hospital_key = True
+    #     print(hospital_key)
+    #     player.add_key()
+    #     print(player.key_fragments)
+    # elif hospital_key == True:
+    #     print('This room seems to be locked now, try another room.')
+    #     return
 
 
 play_hospital_room()

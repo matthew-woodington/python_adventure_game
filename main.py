@@ -1,9 +1,20 @@
 import time
 
 
-key_fragments = 0
+class Player():
+    def __init__(self):
+        self.key_fragments = 0
 
-def start_room()
+    def add_key(self):
+        self.key_fragments += 1
+
+
+player = Player()
+
+# key_fragments = 0
+
+
+def start_room():
 
     if key_fragments == 0:
         print("You find yourself lying flat on your back. You look straight up, but can only see what seems to be endless darkness. You go begin to sit up and try to get your bearings.")
@@ -38,23 +49,25 @@ def start_room()
         print("Your only choice is to keep moving forward.")
         time.sleep(3)
 
-    choice = input("Which door do you try to open? left/right/ahead/behind:  ").lower()
+    choice = input(
+        "Which door do you try to open? left/right/ahead/behind:  ").lower()
 
-    if choice == 'left' :
+    if choice == 'left':
         print("You open the door and step through.")
         time.sleep(3)
         {door_one}
-    elif choice == 'right' :
+    elif choice == 'right':
         print("You open the door and step through.")
         time.sleep(3)
         {door_two}
-    elif choice == 'ahead' :
+    elif choice == 'ahead':
         print("You open the door and step through.")
         time.sleep(3)
         {door_three}
-    elif choice == 'behind' :
-        if key_fragments < 3 :
-            print("You try to turn the handle but it will not budge. This door is locked.")
+    elif choice == 'behind':
+        if key_fragments < 3:
+            print(
+                "You try to turn the handle but it will not budge. This door is locked.")
             time.sleep(3)
         else:
             print("You insert the reformed key into the door and turn the handle. The door swings open and emits a warm, blinding light. You step through.")
@@ -62,10 +75,11 @@ def start_room()
             print("The darkness you've grown accustomed to vanishes in an instant. You feel overwhelmed as your senses are bombarded with the sudden change. Your eyes are closed and you are hesitant to open them.")
             print("After a moment, you open eyes and discover you are lying in a hospital bed, surrounded by your friends and family.")
             print("You ask what happened and they tell you that you were in a terrible accident. They haven't left your side since and could tell that you were fighting to come back to them the whole time.")
-            print("Congratulations, you've made it home after piecing your mind back together.")
+            print(
+                "Congratulations, you've made it home after piecing your mind back together.")
             time.sleep(3)
             print("Thanks for playing!")
-            break
+
     else:
         print("Please enter a valid response.")
         time.sleep(3)
