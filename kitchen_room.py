@@ -128,7 +128,7 @@ class KitchenRoom():
         ready_go = input().lower()
         if ready_go == 'continue':
             print('You pick up the metal key fragment. You swiftly become engulfed in bright cosmic energy. You vanish into the abyss...')
-            # GO BACK TO MAIN ROOM w/ KEY FRAGMENT
+            return
         else:
             print('ENTER A VALID CHOICE! Type continue when you are ready.')
         
@@ -170,14 +170,14 @@ class KitchenRoom():
             print('He hands you what appears to be a piece of a key. Your headache suddenly comes back, hurting twice as bad as before.')
             time.sleep(2)
             print('You become overwhelmingly light-headed. You black out...')
-        # Key Obtained. Return to main room.
+            return
         else:
             print('ENTER A VALID CHOICE! Choose investigate or outside.')
 
     def breakfast_no(self):
         time.sleep(2)
         breakfast_no_choices == input().lower()
-        # potentially transition to standing in the street (yassir's 'room')
+        
 
 
 def play_kitchen_room():
@@ -185,6 +185,7 @@ def play_kitchen_room():
 
     kitchen_room.start_kitchen()
     kitchen_room.pick_ignore()
+    player.add_key()
 
 
-play_kitchen_room()
+play_kitchen_room() # just here for testing purposes. delete before final push!
