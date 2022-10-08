@@ -54,14 +54,17 @@ def start_room()
         {door_three}
     elif choice == 'behind' :
         if key_fragments < 3 :
-            print("this door is locked")
+            print("You try to turn the handle but it will not budge. This door is locked.")
             time.sleep(3)
         else:
-            print("door opens")
+            print("You insert the reformed key into the door and turn the handle. The door swings open and emits a warm, blinding light. You step through.")
             time.sleep(3)
-            print("all in your head...")
+            print("The darkness you've grown accustomed to vanishes in an instant. You feel overwhelmed as your senses are bombarded with the sudden change. Your eyes are closed and you are hesitant to open them.")
+            print("After a moment, you open eyes and discover you are lying in a hospital bed, surrounded by your friends and family.")
+            print("You ask what happened and they tell you that you were in a terrible accident. They haven't left your side since and could tell that you were fighting to come back to them the whole time.")
+            print("Congratulations, you've made it home after piecing your mind back together.")
             time.sleep(3)
-            print("thanks for playing")
+            print("Thanks for playing!")
             break
     else:
         print("Please enter a valid response.")
