@@ -67,16 +67,16 @@ class KitchenRoom():
             time.sleep(3)
             self.investigate_yes()
         elif ignore_choices == 'no':
-            print('You feel confused, thinking you must be seeing this, you saunter over to the kitchen table to pick up your phone.')
+            print('You feel confused, thinking you must be seeing things, you saunter over to the kitchen table to pick up your phone.')
             time.sleep(3)
             self.pick_up()
         else:
             ('ENTER A VALID CHOICE! Choose yes or no:')
             
     def investigate_yes(self):
-        print('Startled, the elephant yelps and scurries past you, managing to open and exit throught the back door.')
+        print('Startled, the elephant yelps and scurries past you, managing to open and exit through the back door.')
         time.sleep(3)
-        print('Overcome with curiousity, you follow. Unable to see where exactly your new pick acquaintance went, you need to make a decision.')
+        print('Overcome with curiousity, you follow. Unable to see where exactly your new pink acquaintance went, you need to make a decision.')
         time.sleep(3)
         print('Would you like to go left into the garden or right along the patio and pool?')
         time.sleep(2)
@@ -85,6 +85,14 @@ class KitchenRoom():
         time.sleep(2)
         if follow_choices == 'left':
             print('You take a left turn and walk along the bushes in your garden.')
+            time.sleep(3)
+            self.choice_left()
+        elif follow_choices == 'right':
+            print('You turn right along the patio and pool.')
+            time.sleep(3)
+            print('You walk along the edge of the pool, noticing nothing as you approach the edge of your yard.')
+            time.sleep(5)
+            print('You walk back towards the front door to the center of your yard, heading left now.')
             time.sleep(3)
             self.choice_left()
 
@@ -163,7 +171,7 @@ class KitchenRoom():
             print('Unsure of where your long-nosed acquaintance went, you walk outside to the back yard')
             time.sleep(3)
             print('As you pass through the back door, an unfortunate familiar pain strikes back upon your temple.')
-            time.sleep(2)
+            time.sleep(5)
             print('Bewildered, you stumble a few paces then fall to the ground. You lose consciousness.')
             return
         elif breakfast_choices == 'outside':
