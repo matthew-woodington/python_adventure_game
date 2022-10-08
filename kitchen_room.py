@@ -190,12 +190,12 @@ class KitchenRoom():
         time.sleep(2)
         self.ignore()
         
-def play_kitchen_room():
-    kitchen_room = KitchenRoom()
+# def play_kitchen_room():
+#     kitchen_room = KitchenRoom()
 
-    kitchen_room.start_kitchen()
-    kitchen_room.pick_ignore()
-    player.add_key()
+#     kitchen_room.start_kitchen()
+#     kitchen_room.pick_ignore()
+#     player.add_key()
 
 
 # play_kitchen_room() # just here for testing purposes. delete before final push!
