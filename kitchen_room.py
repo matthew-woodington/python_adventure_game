@@ -18,6 +18,13 @@ class KitchenRoom():
         time.sleep(3)
         print('In a frantic panic you examine the kitchen.')
         time.sleep(3)
+
+    def start_kitchen_again(self):
+        time.sleep(1)
+        print('Your eyes come to focus and you realize you are somehow back in your kitchen.')
+        time.sleep(3)
+        print('You glance back at the stove and see that it is still 10:45am. How is this possible!')
+        self.pick_ignore()
         
     def pick_ignore(self):
         print('You notice your phone on the kitchen table. Should you pick it up? Enter pick up or ignore:')
@@ -28,20 +35,15 @@ class KitchenRoom():
         elif choice_pick_ignore == 'ignore':
             print('You understand that the day is already well under way. Might as well try to enjoy it.')
             self.ignore()
-            # still need ignore choice event
         else:
-            print("ENTER A VALID CHOICE! Pick up or ignore?")
+            print('ENTER A VALID CHOICE! Pick up or ignore?')
             
     def pick_up(self):
-        print("""
-                Your notice your phone has no new notifications. Not even an email. Peculiar...""")
+        print('Your notice your phone has no new notifications. Not even an email. Peculiar...')
         time.sleep(3)
-        print("""
-            You might as well enjoy your morning. You feel your stomach growl. How about breakfast?
-            
-            Would you like to have breakfast? Type Yes or No.
-            
-            """)
+        print('You might as well enjoy your morning. You feel your stomach growl. How about breakfast?')
+        time.sleep(3)    
+        print('Would you like to have breakfast? Type Yes or No.')
         pick_up_choices = input().lower()
         time.sleep(2)
         if pick_up_choices == 'yes':
@@ -72,6 +74,64 @@ class KitchenRoom():
         else:
             ('ENTER A VALID CHOICE! Choose yes or no:')
 
+    def investigate_yes(self):
+        print('Startled, the elephant yelps and scurries past you, managing to open and exit throught the back door.')
+        time.sleep(3)
+        print('Overcome with curiousity, you follow. Unable to see where exactly your new pick acquaintance went, you need to make a decision.')
+        time.sleep(3)
+        print('Would you like to go left into the garden or right along the patio and pool?')
+        time.sleep(2)
+        print('Enter left or right:')
+        follow_choices = input().lower()
+        time.sleep(2)
+        if follow_choices == 'left':
+            print('You take a left turn and walk along the bushes in your garden.')
+            time.sleep(3)
+            self.choice_left()
+
+    def choice_left(self):
+        print('About 15 paces ahead you notice what looks like a pink tail poking out from one of the bushes.')
+        time.sleep(3)
+        print('The elephant sees you approach. "Hello there! I didn\'t mean to disturb you. I got frightened and my natural instinct is to run off", it says.')
+        time.sleep(4)
+        print('"You seem friendly enough. My name is Emerson."')
+        time.sleep(3)
+        print('"Given the look on your face", he continues, "I am betting you are questioning your sanity by being addressed by a creature such as myself."')
+        time.sleep(3)
+        print('"I would like to help you. But first, let\'s have a little fun!", Emerson exclaims.')
+        time.sleep(3)
+        print('"True or false, you never catch a cold going up in an elevator?"')
+        time.sleep(3)
+        print('Enter true or false;')
+        true_or_false = input().lower()
+        time.sleep(1)
+        if true_or_false == 'true':
+            print('"Correct!", Emerson exclaims. "You come down with a cold, never up."')
+            time.sleep(3)
+            print('"Wasn\'t that fun?", your new pink friend giggles. "Now you are probably wondering what is going on."')
+            time.sleep(2)
+            print('"Trust me and take this with you. This will help you out very soon." Emerson vanishes into a cloud of smoke.')
+            time.sleep(3)
+            print('At your feet appears a small metal fragment resembling a portion of a key.')
+            time.sleep(3)
+            print('Pick it up when you are ready...')
+            self.ready_key()
+        elif true_or_false == 'false':
+            print('"So sorry! That is incorrect. Goodbye, friend!"')
+            time.sleep(3)
+            print('Emerson waves his arms towards you. Almost instantaneously you become severely fatigued and black out.')
+            self.start_kitchen_again()
+
+    def ready_key(self):
+        time.sleep(2)
+        print('Type continue when you are ready:')
+        ready_go = input().lower()
+        if ready_go == 'continue':
+            print('You pick up the metal key fragment. You swiftly become engulfed in bright cosmic energy. You vanish into the abyss...')
+            # GO BACK TO MAIN ROOM w/ KEY FRAGMENT
+        else:
+            print('ENTER A VALID CHOICE! Type continue when you are ready.')
+        
     def breakfast(self):
         print('You gather together the ingredients for a glorious sandwich.') 
         time.sleep(3)
