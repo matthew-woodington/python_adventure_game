@@ -51,7 +51,6 @@ class KitchenRoom():
             self.breakfast()
         elif pick_up_choices == 'no':
             print('You suppose it is getting close to lunch time. You will wait for now.')
-            # insert new scenario to transition to here:
             self.breakfast_no()
         else:
             print('ENTER A VALID CHOICE! Choose Yes or No.')
@@ -73,7 +72,7 @@ class KitchenRoom():
             self.pick_up()
         else:
             ('ENTER A VALID CHOICE! Choose yes or no:')
-
+            
     def investigate_yes(self):
         print('Startled, the elephant yelps and scurries past you, managing to open and exit throught the back door.')
         time.sleep(3)
@@ -161,7 +160,12 @@ class KitchenRoom():
         if breakfast_choices == 'investigate':
             print('You walk over to the closet and open the door. There is nothing in here...')
             time.sleep(3)
-            # go back to a previous function
+            print('Unsure of where your long-nosed acquaintance went, you walk outside to the back yard')
+            time.sleep(3)
+            print('As you pass through the back door, an unfortunate familiar pain strikes back upon your temple.')
+            time.sleep(2)
+            print('Bewildered, you stumble a few paces then fall to the ground. You lose consciousness.')
+            return
         elif breakfast_choices == 'outside':
             print("You walk out into the back yard wiping sweat from your brow. You hear what sounds like a child's laughter coming from the bushes.")
             time.sleep(3)
@@ -176,10 +180,8 @@ class KitchenRoom():
 
     def breakfast_no(self):
         time.sleep(2)
-        breakfast_no_choices == input().lower()
+        self.ignore()
         
-
-
 def play_kitchen_room():
     kitchen_room = KitchenRoom()
 
