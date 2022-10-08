@@ -1,4 +1,5 @@
 import time
+from hospital import *
 
 
 class Player():
@@ -55,8 +56,8 @@ def start_room():
     if choice == 'left':
         print("You open the door and step through.")
         time.sleep(3)
-        {door_one}
-    elif choice == 'right':
+        play_hospital_room()
+    elif choice == 'right' :
         print("You open the door and step through.")
         time.sleep(3)
         {door_two}
@@ -73,13 +74,15 @@ def start_room():
             print("You insert the reformed key into the door and turn the handle. The door swings open and emits a warm, blinding light. You step through.")
             time.sleep(3)
             print("The darkness you've grown accustomed to vanishes in an instant. You feel overwhelmed as your senses are bombarded with the sudden change. Your eyes are closed and you are hesitant to open them.")
+            time.sleep(3)
             print("After a moment, you open eyes and discover you are lying in a hospital bed, surrounded by your friends and family.")
+            time.sleep(3)
             print("You ask what happened and they tell you that you were in a terrible accident. They haven't left your side since and could tell that you were fighting to come back to them the whole time.")
-            print(
-                "Congratulations, you've made it home after piecing your mind back together.")
+            time.sleep(3)
+            print("Congratulations, you've made it home after piecing your mind back together.")
             time.sleep(3)
             print("Thanks for playing!")
-
+            return
     else:
         print("Please enter a valid response.")
         time.sleep(3)
