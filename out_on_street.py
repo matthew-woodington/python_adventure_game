@@ -108,9 +108,9 @@ class OutOnStreet():
              actions2 = False
         return actions2
 
-def play_OutOnStreet():
-        outOnStreet = OutOnStreet()
-        outOnStreet.on_street()
+# def play_OutOnStreet():
+#         outOnStreet = OutOnStreet()
+#         outOnStreet.on_street()
     
 
 

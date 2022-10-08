@@ -1,13 +1,10 @@
-from main import player
+
 import time
 
 
 class HospitalRoom():
     def __init__(self):
         self.has_key = False
-
-    def get_key_value(self):
-        return self.has_key
 
     def set_key_found(self):
         self.has_key = True
@@ -251,13 +248,15 @@ class HospitalRoom():
 
 # hospital_key = False
 
+# hospital_room = HospitalRoom()
 
-def play_hospital_room():
-    hospital_room = HospitalRoom()
-    hospital_room.room_start()
-    hospital_room.main_room_view()
-    player.add_key()
-    print(player.key_fragments)
+
+# def play_hospital_room():
+#     hospital_room.room_start()
+#     hospital_room.main_room_view()
+#     player.add_key()
+#     print(player.key_fragments)
+
     # if hospital_key == False:
     #     hospital_room.room_start()
     #     hospital_room.main_room_view()
@@ -268,6 +267,3 @@ def play_hospital_room():
     # elif hospital_key == True:
     #     print('This room seems to be locked now, try another room.')
     #     return
-
-
-play_hospital_room()
