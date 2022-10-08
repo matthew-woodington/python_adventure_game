@@ -82,7 +82,7 @@ def start_room():
     elif choice == 'ahead':
         print("You open the door and step through.")
         time.sleep(3)
-        {door_three}
+        play_kitchen_room()
     elif choice == 'behind':
         if player.key_fragments < 3:
             print(
