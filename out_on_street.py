@@ -129,9 +129,9 @@ class OutOnStreet():
             self.action_from_left()
 
 
-def play_OutOnStreet():
-        outOnStreet = OutOnStreet()
-        outOnStreet.on_street()
+# def play_OutOnStreet():
+#         outOnStreet = OutOnStreet()
+#         outOnStreet.on_street()
     
 
 
