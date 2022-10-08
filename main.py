@@ -1,5 +1,6 @@
 import time
 from hospital import HospitalRoom
+from kitchen_room import KitchenRoom
 from out_one_street import OutOnStreet
 
 class Player():
