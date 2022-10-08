@@ -53,6 +53,25 @@ class KitchenRoom():
             self.breakfast_no()
         else:
             print('ENTER A VALID CHOICE! Choose Yes or No.')
+
+    def ignore(self):
+        time.sleep(2)
+        print('With your hands on your hips, unsure how to spend your day, you hear the rustling of small feet shuffling around in the kitchen closet.')
+        time.sleep(3)
+        print('Would you like to investigate? Choose yes or no:')
+        ignore_choices = input().lower()
+        time.sleep(2)
+        if ignore_choices == 'yes':
+            print('Cautiously, you slowly approach the closet and crack the door open. Stumbling out is a 3 foot tall pink elephant.')
+            time.sleep(3)
+            self.investigate_yes()
+        elif ignore_choices == 'no':
+            print('You feel confused, thinking you must be seeing this, you saunter over to the kitchen table to pick up your phone.')
+            time.sleep(3)
+            self.pick_up()
+        else:
+            ('ENTER A VALID CHOICE! Choose yes or no:')
+
     def breakfast(self):
         print('You gather together the ingredients for a glorious sandwich.') 
         time.sleep(3)
@@ -68,15 +87,38 @@ class KitchenRoom():
         time.sleep(10)
         print('Suddenly you are awakened by the sound of blaring smoke alarms. THE BACON!')
         time.sleep(3)
-        print("""
-            You run to your kitchen closet and within is a tiny pink teddy bear leaning againt
-            the fire extinguisher. It just waved at you. IT'S ALIVE?! 
-            No time to think about this! You grab the fire extinguisher and swiftly diminish the
-            flames. Crisis averted.""")
-                #more conditions for breakfast and elephant.
-
-    def breakfast_no():
+        print('You run to your kitchen closet and within is a tiny pink elephant leaning against the fire extinguisher.')
+        time.sleep(3)
+        print("It just waved at you. IT'S ALIVE?!")
+        time.sleep(3)
+        print('No time to think about this! You grab the fire extinguisher and swiftly diminish the flames. Crisis averted.')
+        time.sleep(5)
+        print('As your heart rate begins to slow down you remember the strange thing you saw in the closet next to the fire extinguisher.')
+        time.sleep(3)
+        print('Would you like to investigate or go outside for fresh air? Enter investigate/outside:')
+        breakfast_choices = input().lower()
         time.sleep(2)
+        if breakfast_choices == 'investigate':
+            print('You walk over to the closet and open the door. There is nothing in here...')
+            time.sleep(3)
+            # go back to a previous function
+        elif breakfast_choices == 'outside':
+            print("You walk out into the back yard wiping sweat from your brow. You hear what sounds like a child's laughter coming from the bushes.")
+            time.sleep(3)
+            print("Emerging is a 3 foot tall pink elephant. Smiling, he says ''You made it! Nice job. Here, take this with you.''")
+            time.sleep(3)
+            print('He hands you what appears to be a piece of a key. Your headache suddenly comes back, hurting twice as bad as before.')
+            time.sleep(2)
+            print('You become overwhelmingly light-headed. You black out...')
+        # Key Obtained. Return to main room.
+        else:
+            print('ENTER A VALID CHOICE! Choose investigate or outside.')
+
+    def breakfast_no(self):
+        time.sleep(2)
+        breakfast_no_choices == input().lower()
+        # potentially transition to standing in the street (yassir's 'room')
+
 
 def play_kitchen_room():
     kitchen_room = KitchenRoom()
