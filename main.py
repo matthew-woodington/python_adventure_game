@@ -12,6 +12,13 @@ class Player():
 
 player = Player()
 
+def play_kitchen_room():
+    kitchen_room = KitchenRoom()
+
+    kitchen_room.start_kitchen()
+    kitchen_room.pick_ignore()
+    player.add_key()
+
 def play_hospital_room():
     hospital_room = HospitalRoom()
     hospital_room.room_start()

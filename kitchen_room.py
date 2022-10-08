@@ -198,4 +198,4 @@ def play_kitchen_room():
     player.add_key()
 
 
-play_kitchen_room() # just here for testing purposes. delete before final push!
+# play_kitchen_room() # just here for testing purposes. delete before final push!
