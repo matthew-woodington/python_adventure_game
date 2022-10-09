@@ -31,24 +31,28 @@ class HospitalRoom():
 
     def main_room_view(self):
         print('Standing where the door used to be, which would you like to explore? Enter left/center/right')
-        choice_main = input().lower()
-        if choice_main == 'left':
-            print(
-                'You choose to explore the storage unit to see if you can figure out why you are here.')
-            time.sleep(3)
-            self.left_room_view()
-        elif choice_main == 'center':
-            print(
-                'You feel drawn to the bed in the center of the room and the figure hidden under the sheets.')
-            self.center_room_view()
-            time.sleep(3)
-        elif choice_main == 'right':
-            print(
-                'The window to the right looks like it could tell you more about where you are.')
-            time.sleep(3)
-            self.right_room_view()
-        else:
-            print('That command did nothing, try entering left/center/right to progress.')
+        while True:
+            choice_main = input().lower()
+            if choice_main == 'left':
+                print('You choose to explore the storage unit to see if you can figure out why you are here.')
+                time.sleep(3)
+                self.left_room_view()
+                break
+            elif choice_main == 'center':
+                print(
+                    'You feel drawn to the bed in the center of the room and the figure hidden under the sheets.')
+                self.center_room_view()
+                time.sleep(3)
+                break
+            elif choice_main == 'right':
+                print(
+                    'The window to the right looks like it could tell you more about where you are.')
+                time.sleep(3)
+                self.right_room_view()
+                break
+            else:
+                print('That command did nothing, try entering left/center/right to progress.')
+                continue
 
     def right_room_view(self):
         print('Entering the right side of the room you notice the window is not the only thing on the right side of the room,')

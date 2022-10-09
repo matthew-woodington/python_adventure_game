@@ -1,6 +1,7 @@
 import time
 from hospital import HospitalRoom
-from out_one_street import OutOnStreet
+from out_on_street import OutOnStreet
+from kitchen_room import KitchenRoom
 
 class Player():
     def __init__(self):
@@ -17,13 +18,18 @@ def play_hospital_room():
     hospital_room.room_start()
     hospital_room.main_room_view()
     player.add_key()
-    print(player.key_fragments)
 
 def play_OutOnStreet():
     outOnStreet = OutOnStreet()
     outOnStreet.on_street()
     player.add_key()
 
+def play_kitchen_room():
+    kitchen_room = KitchenRoom()
+
+    kitchen_room.start_kitchen()
+    kitchen_room.pick_ignore()
+    player.add_key()
 
 def start_room():
 
@@ -74,7 +80,7 @@ def start_room():
     elif choice == 'ahead':
         print("You open the door and step through.")
         time.sleep(3)
-        {door_three}
+        play_kitchen_room()
     elif choice == 'behind':
         if player.key_fragments < 3:
             print(
@@ -96,5 +102,6 @@ def start_room():
     else:
         print("Please enter a valid response.")
         time.sleep(3)
+        
 
 start_room()
