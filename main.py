@@ -107,13 +107,23 @@ class Game():
                     time.sleep(3)
                     play_hospital_room()
             elif choice == 'right':
-                print("You open the door and step through.")
-                time.sleep(3)
-                play_OutOnStreet()
+                global played_street
+                if played_street == True:
+                    print(
+                        'This door seems to be locked now, you must have to try another.')
+                else:
+                    print("You open the door and step through.")
+                    time.sleep(3)
+                    play_OutOnStreet()
             elif choice == 'ahead':
-                print("You open the door and step through.")
-                time.sleep(3)
-                {door_three}
+                global played_kitchen
+                if played_kitchen == True:
+                    print(
+                        'This door seems to be locked now, you must have to try another.')
+                else:
+                    print("You open the door and step through.")
+                    time.sleep(3)
+                    play_kitchen_room()
             elif choice == 'behind':
                 if player.key_fragments < 3:
                     print(
