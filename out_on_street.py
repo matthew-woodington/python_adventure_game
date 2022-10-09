@@ -218,7 +218,12 @@ kids are playing around adults are chatting. You think you can see Jenny your \n
         print('You and Jenny')
 
     def right_park(self):
-        print('')
+        print("You and Jenny started to walk towards the park. You were talking about all the memories that \n you had and the class", end = " ")
+        time.sleep(3)
+        print("joks that were... It seems that you started to teleport to that time and now you \n were walking in your high school hall!!! ", end= " ")
+        time.sleep(3)
+        print("You are walking toward the main entrance where the sun light is coming through,\n then you looked to you left and " , end =" ")
+        print("the was the stairs way to the second floor she was talking to you that y")
 
     
 
