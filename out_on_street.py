@@ -208,13 +208,13 @@ What will be your first choice?  \nget a ladder  \nclimb the tree?\n""")
     
 
 
-def play_OutOnStreet():
-    outOnStreet = OutOnStreet()
-    outOnStreet.on_street()
+# def play_OutOnStreet():
+#     outOnStreet = OutOnStreet()
+#     outOnStreet.on_street()
     
 
 
-play_OutOnStreet()
+# play_OutOnStreet()
 
 
 
