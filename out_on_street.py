@@ -12,8 +12,7 @@ class OutOnStreet():
         self.has_key = True
         return
 
-    def visited_places(self):
-        self.visited_places_items.append(self.visited)
+  
 
 
     def on_street(self):
@@ -28,22 +27,22 @@ class OutOnStreet():
             print("Just across the street in front of you there is a nice cafe. You may walk to the park if you just head south to your left", end=" ", flush = True)
             print("north of here to the right there is a nice ice cream place. What a day to chose what to do....", flush = True)
             time.sleep(2)
-            print("Which direction will you go: \n<left  >right  ^forward \n", flush = True)
+            print("Where will you go: \n<park  >ice_cream  ^cafe \n", flush = True)
             self.direction = input('').lower()
             self.answer = 'incorrect'
-            self.available_directions = ['left','right','forward']
+            self.available_directions = ['park','ice_cream','cafe']
             self.cycle_route= 0
             self.action_directions()
             self.visited_places_items=[]
 
-
+#To check if the player is cycling through the different opions without finding the key for the level will start to throw hints
+# to solve the level
     def route_checker(self):
         if (self.available_directions==[]) and (self.has_key == False):
-            self.available_directions = ['left','right','forward']
+            self.available_directions = ['park','ice_cream','cafe']
             self.cycle_route = self.cycle_route+1
-            self.available_directions.remove(self.direction)
-            return self.available_directions
-        if self.cycle_route > 4:
+        self.available_directions.remove(self.direction)    
+        if self.cycle_route > 6:
             print('It looks like nothing is catching your interest. Do you want to go back to where you started?')
             print('Do you want to go back or need a hint?')
             self.checker =['back', 'hint']
@@ -51,17 +50,18 @@ class OutOnStreet():
             response = self.response 
             if response == 'hint':
                 print('Check any action other than ignore.... ')
-                self.cycle_route=0
-                return self.available_directions
+                self.cycle_route=0  
             elif response == 'back':
                 self.action_saved()
                 return 
+        return self.available_directions
 
-
+    # The three start choices
     def action_directions(self):
+        # while loop to check for the input is correct else it will ask for valid input
         while self.answer == 'incorrect':
             direction = self.direction
-            if direction == 'left':
+            if direction == 'park':
                 self.route_checker()
                 print("What a lovely day to spend in the park.")
                 # print(self.available_directions)
@@ -85,9 +85,9 @@ class OutOnStreet():
                 elif response == 'ignore':
                     self.action_from_direction()
 
-            elif direction == "right":
+            elif direction == "ice_cream":
                 self.route_checker()
-                print("Hey going for ice cream topping the nice weather with great sweet taste (: .", flush = True)
+                print("Hey going for an ice cream. That is topping the nice weather with great sweet taste (: .", flush = True)
                 time.sleep(2)
                 print('You started walking,you can not believe your eyes it looks like everyone is gathering at that icecream place you are heading to.', end=" ", flush = True)
                 time.sleep(3)
@@ -103,7 +103,7 @@ class OutOnStreet():
                 elif response == 'back':
                     self.action_from_direction()
 
-            elif direction == "forward":
+            elif direction == "cafe":
                 self.route_checker()
                 print('You are crossing the street toward the cafe, as you are walking ', end= "" , flush = True)
                 time.sleep(1.5)
@@ -123,17 +123,17 @@ class OutOnStreet():
                 if response == 'read':
                     print("You came closer and the face you see on the picture looks like..... ", end="", flush=True)
                     time.sleep(3)
-                    print("somewhat familiar... Yes!YEs!!!YEEESSS!!!", flush=True)
+                    print("somewhat familiar... Yes!!!YEEESSS!!!", flush=True)
                     time.sleep(3)
-                    print("That is JENNY!!! What just happened why is she on the front page.", end=" ", flush=True)
+                    print("That is J E N N Y!!! What just happened? Why is she on the front page.", end=" ", flush=True)
                     time.sleep(2)
                     print("You are looking on the paper and suddenly ....you are....")
                     time.sleep(1)
                     self.right_park()
                 elif response == 'cafe':
-                    print("You went on your way to the cafe, ordered your coffee sat there for some time. It is", end=" ",flush=True)
+                    print("You went on your way to the cafe, ordered your drink sat there for some time. It is", end=" ",flush=True)
                     time.sleep(2)
-                    print("type boring with no one to chat with. You walked bak to the street and now.", end=" ", flush=True)
+                    print("type boring with no one to chat with. You walked back to the street and now.", end=" ", flush=True)
                     self.action_from_direction()  
             else:
                 print('Please pick a valid entry')
@@ -204,7 +204,7 @@ class OutOnStreet():
             self.set_key_found()
         elif response == 'go':
             self.action_from_direction()
-
+    # Optimize the available unchecked direction for each cycle so they will not end at the same direction towice on one round
     def action_from_direction(self):
         if len(self.available_directions) <1:
             self.route_checker()
@@ -222,7 +222,8 @@ class OutOnStreet():
         self.direction = self.response
         self.action_directions()
 
-
+    #Check the input from user for the correct spelling to prevent error messages for wrong inputs 
+    
     def input_checker(self):
         mistake_counter=0
         if self.checker[0]==self.checker[1]:
@@ -269,7 +270,7 @@ class OutOnStreet():
     def right_did_see(self):
         print("She waved back to you, you started to chat you told her how you started this day and all the options that you thought about", end =" ", flush = True)
         time.sleep(3)
-        print(",she said she like to have an ice cream cone. Then she said the place is realy crowded may be we go for a walk then come to have the ice cream later.", flush = True)
+        print(",she said she like to have an ice cream cone. Then she said the place is really crowded may be we go for a walk then come to have the ice cream later.", flush = True)
         time.sleep(3)
         print('What you want to do go to the park or have ice cream?', flush = True)
         self.checker =['park', 'ice cream']
@@ -308,7 +309,7 @@ class OutOnStreet():
         time.sleep(3)
         print("You are walking toward the main entrance where the sun light is coming through,then you looked to you left and " , end =" ", flush = True)
         time.sleep(2)
-        print("there, the stairs to the second floor. She was telling to walk with her toward the exit she didn't like it in here. You wanted to go upstairs and visit your old class", end= " ")
+        print("there, the stairs to the second floor. She wanted you to walk with her toward the exit she didn't like it in here. You wanted to go upstairs and visit your old class", end= " ")
         time.sleep(3)
         print("\n  Will you exit or go up the stairs?", flush = True)
         self.checker =['exit', 'stairs']
@@ -322,19 +323,21 @@ class OutOnStreet():
             print("There comes a light and you hear...")
             self.action_saved()
         elif response == 'stairs':
-            self.action_not_reached()
+            print("It is feeling eerie.....")
+            time.sleep(3)
+            print("The lights are on... then...")
+            self.action_from_direction()
 
     
 
 
 
 
-# def play_OutOnStreet():
-#     outOnStreet = OutOnStreet()
-#     outOnStreet.on_street()
+def play_OutOnStreet():
+    outOnStreet = OutOnStreet()
+    outOnStreet.on_street()
 
-# play_OutOnStreet()        
-
+play_OutOnStreet()        
 
 
 
