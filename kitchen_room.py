@@ -56,7 +56,7 @@ class KitchenRoom():
             self.breakfast()
         elif pick_up_choices == 'no':
             print('You suppose it is getting close to lunch time. You will wait for now.')
-            # insert new scenario to transition to here:
+            # to line 186
             self.breakfast_no()
         else:
             print('ENTER A VALID CHOICE! Choose Yes or No.')
@@ -185,7 +185,7 @@ class KitchenRoom():
 
     def breakfast_no(self):
         time.sleep(2)
-        breakfast_no_choices == input().lower()
+        self.ignore()
 
 
 # def play_kitchen_room():
