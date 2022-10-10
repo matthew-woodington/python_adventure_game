@@ -23,8 +23,7 @@ class KitchenRoom():
 
     def start_kitchen_again(self):
         time.sleep(1)
-        print(
-            'Your eyes come to focus and you realize you are somehow back in your kitchen.')
+        print('Your eyes come to focus and you realize you are somehow back in your kitchen.')
         time.sleep(3)
         print('You glance back at the stove and see that it is still 10:45am. How is this possible!')
         self.pick_ignore()
@@ -94,7 +93,16 @@ class KitchenRoom():
             print('You take a left turn and walk along the bushes in your garden.')
             time.sleep(3)
             self.choice_left()
-        # CHOICE RIGHT
+        elif follow_choices == 'right':
+            print('To the right there is nothing but 10 feet of open space until you reach the fence.')
+            time.sleep(3)
+            print('You approach the fence as you notice a sticky note with what looks like a child\'s handwriting on it.')
+            time.sleep(3)
+            print('It reads: BEHIND YOU!')
+            time.sleep(3)
+            print('You turn around.')
+            time.sleep(2)
+            self.choice_left()
 
     def choice_left(self):
         print('About 15 paces ahead you notice what looks like a pink tail poking out from one of the bushes.')
@@ -136,7 +144,8 @@ class KitchenRoom():
         ready_go = input().lower()
         if ready_go == 'continue':
             print('You pick up the metal key fragment. You swiftly become engulfed in bright cosmic energy. You vanish into the abyss...')
-            return
+            time.sleep(5)
+            self.leave_room()
         else:
             print('ENTER A VALID CHOICE! Type continue when you are ready.')
 
@@ -170,7 +179,12 @@ class KitchenRoom():
             print(
                 'You walk over to the closet and open the door. There is nothing in here...')
             time.sleep(3)
-            # go back to a previous function
+            print('You begin to feel dizzy once more.')
+            time.sleep(2)
+            print('Within a few seconds, your vision blurs and you fall to the floor. Unconscious...')
+            time.sleep(5)
+            self.start_kitchen_again()
+
         elif breakfast_choices == 'outside':
             print("You walk out into the back yard wiping sweat from your brow. You hear what sounds like a child's laughter coming from the bushes.")
             time.sleep(3)
@@ -179,13 +193,16 @@ class KitchenRoom():
             print('He hands you what appears to be a piece of a key. Your headache suddenly comes back, hurting twice as bad as before.')
             time.sleep(2)
             print('You become overwhelmingly light-headed. You black out...')
-            return
+            self.leave_room()
         else:
             print('ENTER A VALID CHOICE! Choose investigate or outside.')
 
     def breakfast_no(self):
         time.sleep(2)
         self.ignore()
+    
+    def leave_room(self):
+        time.sleep(2)
 
 
 # def play_kitchen_room():
